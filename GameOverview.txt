@@ -1,0 +1,26 @@
+Solar is a turn-based colony management game focused on building a resilient off-world solar farm.
+Players place energy-generating structures on a hex-like grid, balance demand from nearby habitats,
+and invest in storage solutions that buffer against volatile weather patterns. Each turn is driven by
+three primary systems:
+
+1. **Grid management** – Structures must be placed on available tiles, respecting build limits and
+   adjacency requirements for upgrades.
+2. **Energy resolution** – Sunlight intensity for the turn determines gross energy production, which
+   is offset by structure upkeep and colony demand.
+3. **Storage and deficit tracking** – Excess energy flows into batteries while shortages draw from
+   existing reserves and are tracked as critical deficits that reduce morale.
+
+Known design expectations from early prototypes:
+
+- Solar panels gain a small bonus when networked in clusters to reward thoughtful placement.
+- Batteries should never allow total stored energy to exceed their rated capacity or fall below zero.
+- Any demand that cannot be met after discharging storage must be recorded so that downstream
+  systems (population, research pace) can react appropriately.
+
+The current codebase targets these systems with a lightweight simulation module used by both the
+CLI prototype and future UI layers. The module should provide:
+
+- A `GameState` object capable of validating placements, advancing turns, and emitting structured
+  turn reports.
+- Immutable structure definitions for solar panels, batteries, and consumer buildings.
+- Deterministic rules that a designer can unit test to guard against regressions.
