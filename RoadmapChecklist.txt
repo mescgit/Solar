@@ -1,0 +1,6 @@
+[ ] Implement campaign scenarios with scripted weather timelines.
+[x] Provide a deterministic core simulation module for designers and automated tests.
+[x] Enforce adjacency bonuses for clustered solar panels to reward optimal layouts.
+[x] Clamp energy storage between zero and capacity while reporting surplus overflows.
+[x] Track unmet demand after discharging batteries so downstream systems can react.
+[ ] Build a lightweight CLI shell that exercises the simulation for balancing sessions.
